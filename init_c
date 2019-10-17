@@ -1,0 +1,129 @@
+#Shell scripts in order to init a C basic project 
+
+clear
+path=$(pwd)
+date_begin=$(date --rfc-3339='date')
+
+path_files="/home/andrew/Documents/Bon_bails/programmation"
+path_make="$path_files/Makefile"
+path_read="$path_files/README.md"
+
+if [ $# -eq 0 ]; then
+		dir_name="test_C"
+else
+		dir_name=$1
+fi
+
+if [ -d "$path/$dir_name" ]; then
+		echo "Repertory already exists !"
+		rm -rf "$path/$dir_name"
+else
+		echo "Directory creation"	
+fi
+
+mkdir "$path/$dir_name"
+cp "$path_make" "$path/$dir_name"
+cp "$path_read" "$path/$dir_name"
+cd "$dir_name"
+
+touch main.c
+touch main.h
+touch .gitignore
+
+echo "/*
+main.c
+by Corentin JACLAIN
+Team : 
+Enterprise : 
+
+main function for $dir_name project
+
+creation "$date_begin"
+last modification "$date_begin"
+*/
+
+/* Includes */
+/* Defines */
+/* External declarations */
+/* Typedefs */
+/* Global variables declarations */
+/* Functions prototypes */
+
+int main(int argc, char *argv[]){
+	return 0;
+}">>main.c
+
+echo "/*
+main.h
+by Corentin JACLAIN
+Team : 
+Enterprise : 
+
+main header for $dir_name project
+
+creation $date_begin
+last modification $date_begin
+*/
+
+#ifndef MAIN_H_INCLUDED
+#define MAIN_H_INCLUDED
+#include <stdint.h>
+#include <stdio.h>
+
+#endif // MAIN_H_INCLUDED">>main.h
+
+echo "
+# Source : https://github.com/github/gitignore/blob/master/C.gitignore
+
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf">>.gitignore
