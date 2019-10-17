@@ -4,7 +4,7 @@ clear
 path=$(pwd)
 date_begin=$(date --rfc-3339='date')
 
-path_files="/home/andrew/Documents/Bon_bails/programmation"
+path_files="/path/to/folder"
 path_make="$path_files/Makefile"
 path_read="$path_files/README.md"
 
