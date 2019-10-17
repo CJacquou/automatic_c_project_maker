@@ -8,6 +8,11 @@ path_files="/home/andrew/Documents/Bon_bails/programmation"
 path_make="$path_files/Makefile"
 path_read="$path_files/README.md"
 
+#Fill these variables with your own informations
+name_user="User Name"
+name_team="User Team"
+name_Company="User Company"
+
 if [ $# -eq 0 ]; then
 		dir_name="test_C"
 else
@@ -32,9 +37,9 @@ touch .gitignore
 
 echo "/*
 main.c
-by Corentin JACLAIN
-Team : 
-Enterprise : 
+by "$name_user"
+Team : "$name_team"
+Company : "$name_company"
 
 main function for $dir_name project
 
@@ -55,9 +60,9 @@ int main(int argc, char *argv[]){
 
 echo "/*
 main.h
-by Corentin JACLAIN
-Team : 
-Enterprise : 
+by "$name_user"
+Team : "$name_team"
+company : "$name_company"
 
 main header for $dir_name project
 
